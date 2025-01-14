@@ -1,0 +1,160 @@
+*{
+    border : 100% solid white;
+}
+.navBar_body{
+    color: #48c4ed;
+    display:flex;
+    border-radius: 10px;
+    background-color: rgb(237, 229, 229);
+    justify-content:space-around;
+    border-bottom: #48c4ed solid;
+    border-top: #48c4ed solid;
+    border-left: gold solid;
+    border-right: gold solid;
+}
+.market{
+    padding-top: 35px;
+}
+.search_input_box {
+    box-sizing: border-box;
+    padding: 7px;
+    background-color: hwb(223 87% 8%);
+    color: rgb(131, 30, 213);
+    border-radius: 10px;
+    width: 15pc;
+    /* position: absolute; */
+}
+.search_input::placeholder {
+    color: #f40808d0;
+    font-size: 100%;
+    text-align: center;
+}
+.navbardiv{
+    cursor: pointer;
+    border-radius: 10%;
+}
+.search{
+    color: rgb(23, 22, 22);
+    padding: 7px;
+    background-repeat: no-repeat;
+    border-radius: 10px;
+}
+.search_bar{
+    display: flex;
+    padding: 19px;
+    border-radius: 12pv;
+    /* justify-content:flex-end; */
+}
+/* .cartlogo{
+    padding: 18px;
+} */
+.cartlogo {
+    position: relative;
+    display: inline-block;
+
+    padding-top: 18px;
+}
+
+.cartlogo img {
+    width: 150px;
+    height: 33px;
+    /* padding: 18px; */
+}
+
+.cartCount {
+    padding-top: 18px;
+    position: relative;
+    top: 0;
+    right: 0;
+    background-color: rgba(31, 30, 34, 0.731);
+    color: white;
+    font-size: 12px;
+    padding: 6px;
+    border-radius: 50%;
+    transform: translate(50%, -50%);
+    font-weight: bold;
+}
+/* .Logbutton{
+    color: red;
+    background-color: rgb(68, 18, 185);
+    cursor: pointer;
+    border-radius: 10px;
+    height: 2pc;
+}
+.logout_button{
+    padding: 19px;
+    border-bottom: #4b0be0 solid;
+} */
+ .navButton{
+    padding-top: 17px;
+ }
+ .Logbutton{
+    color: rgb(102, 14, 216);
+    background-color: rgb(185, 210, 231);
+    border-radius: 10px;
+    height: 40px;
+    padding-top: 1px;
+    cursor: pointer;
+}
+.Loginbutton{
+    color: rgb(102, 14, 216);
+    background-color: rgb(185, 210, 231);
+    border-radius: 10px;
+    height: 40px;
+    width: 60px;
+    cursor: pointer;
+}
+.second_navbar{
+    background-color: rgb(237, 229, 229);
+    border:100px;
+    color: red;
+    border-radius: 10px;
+    width: 100%;
+    display: flex;
+}
+.second_navbar_ProductFlyer{
+    background-color: hwb(305 78% 13% / 0.612);
+    padding-top: 1px;
+}
+.second_navbar_ProductFlyer {
+    overflow:hidden;
+    position: relative;
+    background-color: hsl(0, 25%, 98%);
+    /* Optional: Background color */
+    padding: 10px 0;
+    /* Optional: Padding for better visuals */
+}
+
+.marquee {
+    display: inline-flex;
+    /* Place items in a single line */
+    animation: marquee 10s linear infinite;
+}
+
+.modern,
+.modern2 {
+    margin: 0 20px;
+    font-size: 30px; /* Adjust font size */
+    color: #333;   /* text color*/
+}
+/* Scrolling animation */
+@keyframes marquee {
+    0% {
+        transform: translateX(80%);
+        /* Start off the screen to the right */
+    }
+    100% {
+        transform: translateX(-100%);
+    }
+}
+.firstDivDisplay{
+    display: flex;
+    justify-content: center;
+}
+.welcomeImg{
+    height: 640px;
+    width: 600px;
+}
+.welcomeWoman{
+    width: 513px;
+}

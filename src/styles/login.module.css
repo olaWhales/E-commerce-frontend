@@ -1,0 +1,52 @@
+/* *{
+    background-color: aqua;
+} */
+
+
+.mainform{
+    height:600px;
+    background-image: url("buyerlogin.jpeg");
+    background-color: #f6f5f2;
+    text-align: center;
+    align-items: center;
+    justify-content:center;
+    display: flex;
+}
+.input{
+    width: 400px;
+    height: 40px;
+    border-radius: 20px;
+    text-align: center;
+    border-bottom: 20px solid rgb(246, 243, 230);
+}
+.button{
+    width: 100px;
+    height: 50px;
+    border-radius: 10px;
+    cursor: pointer;
+}
+.welcome{
+    color: aquamarine;
+    font-size: 80px;
+    font-style:italic;
+    font-weight: 1000px;
+}
+.dear{
+    color: orange;
+}
+.valued{
+    color: rgb(201, 182, 162);
+}
+.we{
+    color: rgb(231, 54, 30);
+}
+.co{
+    color: blueviolet;
+}
+.dontHaveAccount{
+    padding: 20px;
+    justify-content: center;
+    display: flex;
+}
+
+
