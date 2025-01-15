@@ -1,18 +1,19 @@
 import React from "react";
 import Customizedbutton from "../customButton/customButton";
 import { Link } from "react-router-dom";
-import style from "../styles/login.module.css"
-import handshake from "../pictures/handshake.jpeg"
-import buyerBag from  "../pictures/buyerlogin.jpeg"
+import HomePage from "../auth/HomePage";
+import product from "../auth/products";
+import style from "../styles/buyerlogin.module.css";
+import handshake from "../pictures/handshake.jpeg";
+import buyerBag from "../pictures/buyerlogin.jpeg";
 import { useNavigate } from "react-router-dom";
 import route from "../routes/route";
 
-
-const Login = () => {
+const SellerLogin = () => {
   const navigate = useNavigate();
 
   const handleNavigate = () => {
-    navigate("/"); // Navigate to the home page route
+    navigate("product/"); // Navigate to the home page route
   };
 
   return (
@@ -20,8 +21,8 @@ const Login = () => {
       <div className={style.mainform}>
         <form className={style.forms} action="">
           <h1 className={style.welcome}>
-            <span className={style.we}>WEL</span>
-            <span className={style.co}>CO</span>ME
+            <span className={style.we}>PLEASE</span>
+            <span className={style.co}>LOGIN YOUR</span>DETAILS
           </h1>
           <img src={handshake} alt="Welcome Handshake" />
 
@@ -49,23 +50,24 @@ const Login = () => {
             type="button"
             textContent="Submit"
             onClick={handleNavigate} // Trigger navigation on click
-            route="/"
+            route="product/"
           />
         </form>
       </div>
 
-      <div className={style.second_div}>
-        <div className={style.dontHaveAccount}>
-          <h2>
-            Don't have an account? {">>>"}
-            <Link to="/signUp" className={style.link}>
-              Click me
+      {/* <div className={style.become}>
+        <div>
+          <h3>
+            {" "}
+            Do you want to become a seller{" "}
+            <Link to="/SellerSignUp" className={style.becomeSeller}>
+              REGISTER
             </Link>
-          </h2>
+          </h3>
         </div>
-      </div>
+      </div> */}
     </div>
   );
 };
 
-export default Login;
+export default SellerLogin;

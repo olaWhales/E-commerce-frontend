@@ -24,7 +24,7 @@ const HomePage = () => {
     const navigate = useNavigate();
 
     const handleNavigate = () => {
-      navigate("/login"); // Navigate to the home page route
+      navigate("/buyerLogin"); // Navigate to the home page route
     };
     // const handleNavigateToHomePage = () =>{
     //   navigate("/homePage")
@@ -73,7 +73,7 @@ const HomePage = () => {
             type="submit"
             textContent="Login"
             onClick={handleNavigate}
-            route="/login"
+            route="/"
             // className={style}
           />
 

@@ -1,21 +1,35 @@
-import HomePage from "../auth/homePage"
-import Login from "../login/login";
-import SignUp from "../signUp/signUp.jsx";
+import HomePage from "../auth/HomePage";
+import BuyerLogin from "../login/buyerLogin";
+import SellerSignUp from "../signUp/sellerSignUp";
+import SellerLogin from "../login/sellerLogin";
+import BuyerSignUp from "../signUp/buyerSignUp";
+import Product from "../auth/products/";
 
 const route = [
-    {
-        path: "/",
-        element: <HomePage/>
-    },
-    {
-        path: "/login",
-        element: <Login/>
-    },
-    {
-        path: "/signUp",
-        element: <SignUp/>
-    }
-
+  {
+    path: "/",
+    element: <HomePage />,
+  },
+  {
+    path: "/buyerLogin",
+    element: <BuyerLogin />,
+  },
+  {
+    path: "/buyerSignUp",
+    element: <BuyerSignUp/>
+  },
+  {
+    path: "/sellerSignUp",
+    element: <SellerSignUp />,
+  },
+  {
+    path: "/sellerLogin",
+    element: <SellerLogin/>
+  },
+  {
+    path: "/product",
+    element: <Product/>
+  }
 ];
 
 export default route;

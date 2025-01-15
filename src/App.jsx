@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import {createBrowserRouter , RouterProvider} from "react-router-dom"
 import route from './routes/route.jsx'
-import HomePage from './auth/homePage.jsx'
+import HomePage from './auth/HomePage.jsx'
 
 const router = createBrowserRouter([...route])
 
