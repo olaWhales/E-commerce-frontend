@@ -48,5 +48,11 @@
     justify-content: center;
     display: flex;
 }
-
-
+.become{
+    display: flex;
+    justify-content: space-between;
+}
+.apply{
+    color: rgb(14, 46, 208);
+    border-radius: 10px;
+}

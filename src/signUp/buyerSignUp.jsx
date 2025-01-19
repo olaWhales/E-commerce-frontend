@@ -1,193 +1,138 @@
-import React from 'react';
-import {useState , useEffect} from 'react'
-import { useNavigate } from 'react-router-dom';
+import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import styles from "../styles/buyerSignUp.module.css";
-import Customizedbutton from '../customButton/customButton';
+import Customizedbutton from "../customButton/customButton";
+import axios from "axios";
 
-const BuyerSignUp = () => {
-  const navigate = useNavigate();
-  const handleNavigate = () => {
-    navigate("/"); // Navigate to the home page route
-  };
+function BuyerSignUp () {
+    const [firstName , setFirstName] = useState("");
+    const [lastName , setLastName] = useState ("");
+    const [contact , setContact] = useState("");
+    const [email , setEmail] = useState("");
+    const [birthDate , setBirthday] = useState("");
+    const [password , setPassword] = useState("");
 
-  //   const [form, setForm] = useState({
-  //     email: "",
-  //     userName: "",
-  //     password: "",
-  //     fullName: "",
-  //   });
-  //   const handleChange = (e) => {
-  //     const { name, value } = e.target;
-  //     setForm({
-  //       ...form,
-  //       [name]: value,
-  //     });
-  //   };
-  //   const registerHandle = async (e) => {
-  //     e.preventDefault();
-  //     console.log(form);
-  //     try {
-  //       const response = await axios.post(
-  //         "http://localhost:8080/api/recipes/User-Sign-Up",
-  //         form
-  //       );
-  //       console.log(response.status); //201
-  //       if (response.data.message.includes("Registered successful")) {
-  //         navigate("/login");
-  //         console.log("working");
-  //       } else {
-  //         alert("user exists...");
-  //       }
-  //     } catch (error) {
-  //       console.log(error);
-  //     }
-  //   };
-  const [dob, setDob] = useState("");
-  const [profileCreatedDate, setProfileCreatedDate] = useState("");
+    const navigate = useNavigate();
 
-  useEffect(() => {
-    // Simulate fetching data from the backend
-    const fetchData = async () => {
-      try {
-        const response = await fetch("/api/profile"); // Replace with your backend API
-        const data = await response.json();
+    const handleBuyerSignUp = async (event)=>{
+    event.preventDefault();
 
-        // Assuming backend sends ISO format dates
-        setDob(data.dob);
-        setProfileCreatedDate(
-          new Date(data.profileCreatedDate).toLocaleString()
-        );
-      } catch (error) {
-        console.error("Error fetching profile data:", error);
-      }
-    };
+    try {
+      const payload = {
+        firstName,
+        lastName,
+        contact,
+        email,
+        birthDate,
+        password,
+      };
+        const response = await axios.post(
+        "http://localhost:8080/e_commerce/api/Buyer_register_api/",
+        payload,
+        {
+            headers: {
+            "Content-Type": "application/json",
+            },
+        }
+        );  
 
-    fetchData();
-  }, []);
+        if (response.status === 201 || response.status === 200) {
+
+          setFirstName("")
+          setLastName("")
+          setContact("")
+          setEmail("")
+          setBirthday("")
+          setPassword("")
+          alert("Registered successful")
+          
+          navigate("/buyerLogin");
+        }else{
+            alert("Please complete the form.");
+        }
+    } catch(error){
+        console.error("Error during registration:", error);
+        // alert("Failed to register. Please check your details and try again.");
+        console.log(error)
+        }
+    }
   return (
     <div className={styles.mainform}>
       <div>
-        <form className={styles.form}>
+        <form className={styles.form} >
           <div className={styles.formGroup}>
-            {/* <label htmlFor="name" className={styles.label}>
-              Name:
-            </label> */}
             <input
               type="text"
-              id="firstName"
+            //   id="firstName"
               name="firstName"
+              value={firstName}
+              onChange={(e) => setFirstName(e.target.value)}
               placeholder="Enter your firstName"
-              // onChange={handleChange}
               className={styles.input}
+              required
             />
           </div>
           <div className={styles.formGroup}>
-            {/* <label htmlFor="name" className={styles.label}>
-              Name:
-            </label> */}
             <input
               type="text"
-              id="lastName"
+            //   id="lastName"
               name="lastName"
+              value={lastName}
+              onChange={(e) => setLastName(e.target.value)}
               placeholder="Enter your lastName"
-              // onChange={handleChange}
               className={styles.input}
+              required
             />
           </div>
+
           <div className={styles.formGroup}>
-            {/* <label htmlFor="name" className={styles.label}>
-              Name:
-            </label> */}
-            <input
-              type="text"
-              id="contact"
-              name="contact"
-              placeholder="Enter your contact"
-              // onChange={handleChange}
-              className={styles.input}
-            />
-          </div>
-          <div className={styles.formGroup}>
-            {/* <label htmlFor="email" className={styles.label}>
-              Email:
-            </label> */}
             <input
               type="email"
-              id="email"
+            //   id="email"
               name="email"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
               placeholder="Enter your email"
-              // onChange={handleChange}
               className={styles.input}
+              required
             />
           </div>
           <div className={styles.formGroup}>
-            {/* <label htmlFor="email" className={styles.label}>
-              Email:
-            </label> */}
-            <input
-              type="date"
-              id="dob"
-              name="dob"
-              placeholder="Date of birth "
-              // onChange={handleChange}
-              className={styles.input}
-            />
-          </div>
-          {/* <div className={styles.formGroup}>
-              <input
-                type="text"
-                value={profileCreatedDate}
-                readOnly
-                className={styles.input}
-              />
-            </div> */}
-          <div className={styles.formGroup}>
-            {/* <label htmlFor="password" className={styles.label}>
-              Password:
-            </label> */}
             <input
               type="password"
-              id="password"
+            //   id="password"
               name="password"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
               placeholder="Enter your password"
-              // onChange={handleChange}
               className={styles.input}
+              required
             />
           </div>
           <div className={styles.formGroup}>
-            {/* <label htmlFor="password" className={styles.label}>
-              Password:
-            </label> */}
             <input
               type="text"
-              id="companyName"
-              name="companyName"
-              placeholder="CompanyName"
-              // onChange={handleChange}
+            //   id="contact"
+              name="contact"
+              value={contact}
+              onChange={(e) => setContact(e.target.value)}
+              placeholder="Enter your contact"
               className={styles.input}
+              required
             />
           </div>
 
           <Customizedbutton
-            style={styles.button} // Use className for styling
-            type="button"
+            style={styles.button}
+            type="submit"
             textContent="Submit"
-            onClick={handleNavigate} // Trigger navigation on click
-            route="buyerLogin/"
+            onClick={handleBuyerSignUp}
           />
+          {/* <div className={styles.button} onClick={handleBuyerSignUp}>Submit</div> */}
         </form>
       </div>
-
-      {/* <div className={styles.linkToMainMenu}>
-              <h2>
-                  Go back to the main menu {">>>"}
-                < Link to="/HomePage" className={styles.link}>
-                 Click me
-                </Link>
-              </h2>
-            </div> */}
     </div>
   );
-}
+};
 
-export default BuyerSignUp
+export default BuyerSignUp;

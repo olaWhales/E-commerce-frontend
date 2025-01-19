@@ -3,7 +3,7 @@ import BuyerLogin from "../login/buyerLogin";
 import SellerSignUp from "../signUp/sellerSignUp";
 import SellerLogin from "../login/sellerLogin";
 import BuyerSignUp from "../signUp/buyerSignUp";
-import Product from "../auth/products/";
+import Product from "../auth/productForm"
 
 const route = [
   {
