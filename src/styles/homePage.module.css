@@ -1,64 +1,74 @@
-*{
+ *{
     border : 100% solid white;
 }
+/*  */
+
+.company_name{
+    color: red;
+    padding-bottom: 1px;
+}
+
 .navBar_body{
-    color: #48c4ed;
-    display:flex;
-    border-radius: 10px;
-    background-color: rgb(237, 229, 229);
-    justify-content:space-around;
-    border-bottom: #48c4ed solid;
-    border-top: #48c4ed solid;
-    border-left: gold solid;
-    border-right: gold solid;
-}
-.market{
-    padding-top: 35px;
-}
-.search_input_box {
-    box-sizing: border-box;
-    padding: 7px;
-    background-color: hwb(223 87% 8%);
-    color: rgb(131, 30, 213);
-    border-radius: 10px;
-    width: 15pc;
-    /* position: absolute; */
-}
-.search_input::placeholder {
-    color: #f40808d0;
-    font-size: 100%;
-    text-align: center;
-}
-.navbardiv{
-    cursor: pointer;
-    border-radius: 10%;
-}
-.search{
-    color: rgb(23, 22, 22);
-    padding: 7px;
-    background-repeat: no-repeat;
-    border-radius: 10px;
-}
-.search_bar{
     display: flex;
-    padding: 19px;
-    border-radius: 12pv;
-    /* justify-content:flex-end; */
+    justify-content: space-between;
+    padding-top: 30px;
 }
-/* .cartlogo{
-    padding: 18px;
-} */
-.cartlogo {
+
+
+.search_bar {
+    display: flex;
+    position: relative;
+    width: 100%;
+    max-width: 400px;
+}
+
+.navbar_search_div {
+    width: 100%;
+}
+
+.nav_bar_search_input {
+    width: 90%;
+    padding: 9px 80px 8px 115px;
+    /* Space on the right for the button */
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    border-radius: 25px;
+}
+
+.search_bar_button {
+    position: absolute;
+    right: 10px;
+    top: 20%;
+    transform: translateY(-50%);
+}
+
+.search {
+    border: none;
+    background-color: #ff0000;
+    color: white;
+    padding: 10px 20px;
+    /* padding: 10px; */
+    border-radius: 20px;
+    cursor: pointer;
+}
+/*  */
+
+.second_line_div{
+    /* border-radius: 100px; */
+    background-color: rgb(150, 87, 232);;
+    padding-top: 2px;
+}
+
+
+/*  */
+/* .cartlogo {
     position: relative;
     display: inline-block;
-
-    padding-top: 18px;
-}
+} */
 
 .cartlogo img {
     width: 150px;
     height: 33px;
-    /* padding: 18px; */
 }
 
 .cartCount {
@@ -74,26 +84,21 @@
     transform: translate(50%, -50%);
     font-weight: bold;
 }
-/* .Logbutton{
-    color: red;
-    background-color: rgb(68, 18, 185);
-    cursor: pointer;
-    border-radius: 10px;
-    height: 2pc;
+
+.login_logout_and_cartDiv{
+    display: flex;
+    gap: 25px;
+    /* justify-content:space-around; */
+    /* margin: 0 0 0 20rem; */
 }
-.logout_button{
-    padding: 19px;
-    border-bottom: #4b0be0 solid;
-} */
- .navButton{
-    padding-top: 17px;
- }
- .Logbutton{
-    color: rgb(102, 14, 216);
-    background-color: rgb(185, 210, 231);
+ .Logoutbutton{
+    color: rgb(239, 232, 232);
+    background-color: rgb(255, 3, 3);
     border-radius: 10px;
     height: 40px;
-    padding-top: 1px;
+    width: 80px;
+    border: #333;
+    /* padding-top: 1px; */
     cursor: pointer;
 }
 .Loginbutton{
@@ -101,7 +106,8 @@
     background-color: rgb(185, 210, 231);
     border-radius: 10px;
     height: 40px;
-    width: 60px;
+    width: 80px;
+    border: #333;
     cursor: pointer;
 }
 .second_navbar{
@@ -114,21 +120,23 @@
 }
 .second_navbar_ProductFlyer{
     background-color: hwb(305 78% 13% / 0.612);
-    padding-top: 1px;
+    /* padding-top: 1px; */
+    /* background-color: rgb(150, 87, 232); */
+    padding-top: 2px;
 }
 .second_navbar_ProductFlyer {
     overflow:hidden;
     position: relative;
-    background-color: hsl(0, 25%, 98%);
+    background-color: rgb(150, 87, 232);
     /* Optional: Background color */
-    padding: 10px 0;
+    padding: 1px 0;
     /* Optional: Padding for better visuals */
 }
 
 .marquee {
     display: inline-flex;
     /* Place items in a single line */
-    animation: marquee 10s linear infinite;
+    animation: marquee 30s linear infinite;
 }
 
 .modern,
@@ -158,3 +166,6 @@
 .welcomeWoman{
     width: 513px;
 }
+
+
+
