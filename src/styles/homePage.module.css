@@ -58,6 +58,11 @@
     background-color: rgb(150, 87, 232);;
     padding-top: 2px;
 }
+.advert{
+    /* justify-content: center; */
+    text-align: center;
+
+}
 
 
 /*  */
@@ -157,7 +162,22 @@
 }
 .firstDivDisplay{
     display: flex;
-    justify-content: center;
+    justify-content: space-around;
+        /* color: rgb(185, 16, 22); */
+}
+.first_advert_color{
+    border-radius: 15px;
+    color: #ff0000;
+}
+/* .first_div_2t{
+} */
+.apply{
+    color: #ff0000;
+    border-radius: 5px;
+    background-color: rgb(255, 255, 255);
+    border: 1px solid #ff0000;
+    cursor: pointer;
+    padding: 10px 60px;
 }
 .welcomeImg{
     height: 640px;
