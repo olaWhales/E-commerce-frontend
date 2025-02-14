@@ -303,7 +303,10 @@ const HomePage = () => {
       {/* fourt div */}
 
       <div className={style.fourth_navbar}>
-        <h1>Want to become a seller</h1>
+        <h1>
+          Want to become a <span className={style.seller_color}> seller</span>
+        </h1>
+        <h3>Register as a seller in the sign up page</h3>
       </div>
 
       <div>
