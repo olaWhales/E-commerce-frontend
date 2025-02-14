@@ -115,28 +115,20 @@
     border: #333;
     cursor: pointer;
 }
-.second_navbar{
-    background-color: rgb(237, 229, 229);
-    border:100px;
-    color: red;
-    border-radius: 10px;
-    width: 100%;
-    display: flex;
-}
-.second_navbar_ProductFlyer{
+
+/* .second_navbar_ProductFlyer{
     background-color: hwb(305 78% 13% / 0.612);
-    /* padding-top: 1px; */
-    /* background-color: rgb(150, 87, 232); */
+    padding-top: 1px;
+    background-color: rgb(150, 87, 232);
     padding-top: 2px;
-}
-.second_navbar_ProductFlyer {
+} */
+/* .second_navbar_ProductFlyer {
     overflow:hidden;
     position: relative;
     background-color: rgb(150, 87, 232);
-    /* Optional: Background color */
     padding: 1px 0;
-    /* Optional: Padding for better visuals */
-}
+    Optional: Padding for better visuals
+} */
 
 .marquee {
     display: inline-flex;
@@ -163,15 +155,13 @@
 .firstDivDisplay{
     display: flex;
     justify-content: space-around;
-        /* color: rgb(185, 16, 22); */
+    padding-bottom: 20px;
 }
 .first_advert_color{
     border-radius: 15px;
-    color: #ff0000;
+    /* color: #ff0000; */
 }
-/* .first_div_2t{
-} */
-.apply{
+.add_to_cart_button{
     color: #ff0000;
     border-radius: 5px;
     background-color: rgb(255, 255, 255);
@@ -179,6 +169,30 @@
     cursor: pointer;
     padding: 10px 60px;
 }
+
+
+.view_all_button_div{
+    justify-content: center;
+    /* background-color: #ff0000; */
+    display: flex;
+    /* text-align: center;
+    justify-items: center;
+    border-radius: 100px;
+    width: 150px;
+    height: 50px; */
+}
+.view_all_button{
+    border-radius: 100px;
+    justify-content: center;
+    width: 150px;
+    height: 50px;
+    background-color: #cd6767;
+    display: center;
+    cursor: pointer;
+}
+
+
+
 .welcomeImg{
     height: 640px;
     width: 600px;
@@ -186,6 +200,19 @@
 .welcomeWoman{
     width: 513px;
 }
-
+.second_navbar {
+    padding-top: 20px;
+    display: flex;
+    justify-content: space-around;
+}
+.third_navbar{
+    padding-top: 20px;
+    display: flex;
+    justify-content: space-around;
+}
+.fourth_navbar{
+    border: 100px solid rgb(156, 219, 21);
+    padding-top: 20px;
+}
 
 

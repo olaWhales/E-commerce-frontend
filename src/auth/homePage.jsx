@@ -17,6 +17,10 @@ import second_div_1 from "../product_picture/second_div_1.jpeg";
 import second_div_2 from "../product_picture/second_div_2.jpeg";
 import second_div_3 from "../product_picture/second_div_3.jpeg";
 import second_div_4 from "../product_picture/second_div_4.jpeg";
+import third_div_1 from "../product_picture/third_div_1.jpeg";
+import third_div_2 from "../product_picture/third_div_2.jpeg";
+import third_div_3 from "../product_picture/third_div_3.jpeg";
+import third_div_4 from "../product_picture/third_div_4.jpeg";
 
 
 
@@ -26,7 +30,6 @@ const HomePage = () => {
   const handleAddToCart = () => {
     setCartCount((prevCount) => prevCount + 1);
   };
-
   const handleRemoveFromCart = () => {
     setCartCount((prevCount) => (prevCount > 0 ? prevCount - 1 : 0));
   };
@@ -124,7 +127,7 @@ const HomePage = () => {
           />
           <h2>#5,000</h2>
           <h5>Men jean trouser</h5>
-          <button className={style.apply}>
+          <button className={style.add_to_cart_button}>
             <b>add to cart</b>
           </button>
         </div>
@@ -138,7 +141,10 @@ const HomePage = () => {
           />
           <h2>#5,000</h2>
           <h5>Men jean trouser</h5>
-          <button className={style.apply}>
+          <button
+            className={style.add_to_cart_button}
+            onClick={handleAddToCart}
+          >
             <b>add to cart</b>
           </button>
         </div>
@@ -152,7 +158,10 @@ const HomePage = () => {
           />
           <h2>#5,000</h2>
           <h5>Women jean trouser</h5>
-          <button className={style.apply}>
+          <button
+            className={style.add_to_cart_button}
+            onClick={handleAddToCart}
+          >
             <b>add to cart</b>
           </button>
         </div>
@@ -164,23 +173,138 @@ const HomePage = () => {
             height={250}
             alt=""
           />
-
           <h2>#5,000</h2>
           <h5>Women jean trouser</h5>
-          <button className={style.apply}>
+          <button
+            className={style.add_to_cart_button}
+            onClick={handleAddToCart}
+          >
             <b>add to cart</b>
           </button>
         </div>
       </div>
 
-      {/* <div className={style.second_navbar}>
+      {/* view all div */}
+
+      <div className={style.view_all_button_div}>
+        <button className={style.view_all_button}> View All</button>
+      </div>
+
+      {/* first advert div */}
+
+      <div className={style.second_navbar}>
         <div>
-          <img src={cloth} height={490} alt="" width={730} />
+          <img src={second_div_1} height={250} alt="" width={170} />
+          <h2>#15,450</h2>
+          <h5>Men sneakers</h5>
+          <button
+            className={style.add_to_cart_button}
+            onClick={handleAddToCart}
+          >
+            <b>add to cart</b>
+          </button>
         </div>
         <div>
-          <img src={chair} height={490} width={785} alt="" />
+          <img src={second_div_2} height={250} width={170} alt="" />
+          <h2>#15,500</h2>
+          <h5>Men sneakers</h5>
+          <button
+            className={style.add_to_cart_button}
+            onClick={handleAddToCart}
+          >
+            <b>add to cart</b>
+          </button>
         </div>
-      </div> */}
+        <div>
+          <img src={second_div_3} height={250} alt="" width={170} />
+          <h2>#15,000</h2>
+          <h5>Men sneakers</h5>
+          <button
+            className={style.add_to_cart_button}
+            onClick={handleAddToCart}
+          >
+            <b>add to cart</b>
+          </button>
+        </div>
+        <div>
+          <img src={second_div_4} height={250} width={170} alt="" />
+          <h2>#15,100</h2>
+          <h5>Men sneakers</h5>
+          <button
+            className={style.add_to_cart_button}
+            onClick={handleAddToCart}
+          >
+            <b>add to cart</b>
+          </button>
+        </div>
+      </div>
+
+      {/*second view all div */}
+
+      <div className={style.view_all_button_div}>
+        <button className={style.view_all_button}> View All</button>
+      </div>
+
+      {/* third div */}
+
+      <div className={style.third_navbar}>
+        <div>
+          <img src={third_div_1} height={250} alt="" width={170} />
+          <h2>#3,595</h2>
+          <h5>Men boxer</h5>
+          <button
+            className={style.add_to_cart_button}
+            onClick={handleAddToCart}
+          >
+            <b>add to cart</b>
+          </button>
+        </div>
+        <div>
+          <img src={third_div_2} height={250} width={170} alt="" />
+          <h2>#3,595</h2>
+          <h5>Men boxer</h5>
+          <button
+            className={style.add_to_cart_button}
+            onClick={handleAddToCart}
+          >
+            <b>add to cart</b>
+          </button>
+        </div>
+        <div>
+          <img src={third_div_3} height={250} alt="" width={170} />
+          <h2>#3,595</h2>
+          <h5>Men boxer</h5>
+          <button
+            className={style.add_to_cart_button}
+            onClick={handleAddToCart}
+          >
+            <b>add to cart</b>
+          </button>
+        </div>
+        <div>
+          <img src={third_div_4} height={250} width={170} alt="" />
+          <h2>#3,595</h2>
+          <h5>Men boxer</h5>
+          <button
+            className={style.add_to_cart_button}
+            onClick={handleAddToCart}
+          >
+            <b>add to cart</b>
+          </button>
+        </div>
+      </div>
+
+      {/*second view all div */}
+
+      <div className={style.view_all_button_div}>
+        <button className={style.view_all_button}> View All</button>
+      </div>
+
+      {/* fourt div */}
+
+      <div className={style.fourth_navbar}>
+        <h1>Want to become a seller</h1>
+      </div>
 
       <div>
         <button onClick={handleAddToCart}>Add Item</button>
