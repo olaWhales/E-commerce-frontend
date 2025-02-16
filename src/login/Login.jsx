@@ -1,14 +1,14 @@
 import React, { useState } from "react";
 import Customizedbutton from "../customButton/customButton";
 import { Link, useNavigate } from "react-router-dom";
-import style from "../styles/buyerlogin.module.css";
+import style from "../styles/login.module.css";
 import handshake from "../pictures/handshake.jpeg";
 import axios from "axios"; // Fixed import
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
 
-function BuyerLogin() {
-  const [email, setEmail] = useState("");
+function Login() {
+  const [userName, setUserName] = useState("");
   const [password, setPassword] = useState("");
   const navigate = useNavigate();
 
@@ -16,9 +16,9 @@ function BuyerLogin() {
     event.preventDefault();
 
     try {
-      const payload = { email, password };
+      const payload = { userName, password };
       const response = await axios.post(
-        "http://localhost:8080/e_commerce/api/buyer_login_api/",
+        "http://localhost:8000/api/register/login",
         payload,
         {
           headers: {
@@ -30,12 +30,12 @@ function BuyerLogin() {
       console.log("API Response:", response);
 
       if (response.status === 201 || response.status === 200) {
-        setEmail("");
+        setUserName("");
         setPassword("");
         alert("Login successful!");
         navigate("/");
       } else {
-        alert("Invalid email or password. Please try again.");
+        alert("Invalid username or password. Please try again.");
       }
     } catch (error) {
       console.error(
@@ -88,19 +88,19 @@ function BuyerLogin() {
         <div className={style.dontHaveAccount}>
           <h2>
             Don't have an account? {">>>"}{" "}
-            <Link to="/buyerSignUp" className={style.link}>
+            <Link to="/SignUp" className={style.link}>
               Click me
             </Link>
           </h2>
         </div>
       </div>
 
-      <div className={style.become}>
+      {/* <div className={style.become}>
         <div>
           <h3>
             <i>HI Seller, click the arrow to login</i>
             <Link
-              to="/SellerLogin"
+              to="/Login"
               style={{ marginLeft: "12px", textDecoration: "none" }}
             >
               <FontAwesomeIcon icon={faArrowRight} size="sm" />
@@ -117,9 +117,9 @@ function BuyerLogin() {
             </Link>
           </h3>
         </div>
-      </div>
+      </div> */}
     </div>
   );
 }
 
-export default BuyerLogin;
+export default Login;

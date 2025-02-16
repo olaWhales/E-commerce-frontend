@@ -21,7 +21,7 @@ import third_div_1 from "../product_picture/third_div_1.jpeg";
 import third_div_2 from "../product_picture/third_div_2.jpeg";
 import third_div_3 from "../product_picture/third_div_3.jpeg";
 import third_div_4 from "../product_picture/third_div_4.jpeg";
-
+// import footer_cover_div from "../pictures/footer_cover_div.jpeg";
 
 
 const HomePage = () => {
@@ -38,7 +38,7 @@ const HomePage = () => {
     const navigate = useNavigate();
 
     const handleNavigate = () => {
-      navigate("/buyerLogin"); // Navigate to the home page route
+      navigate("/Login"); // Navigate to the home page route
     };
     // const handleNavigateToHomePage = () =>{
     //   navigate("/homePage")
@@ -128,6 +128,7 @@ const HomePage = () => {
           <h2>#5,000</h2>
           <h5>Men jean trouser</h5>
           <button className={style.add_to_cart_button}>
+            onClick={handleAddToCart}
             <b>add to cart</b>
           </button>
         </div>
@@ -303,10 +304,75 @@ const HomePage = () => {
       {/* fourt div */}
 
       <div className={style.fourth_navbar}>
-        <h1>
-          Want to become a <span className={style.seller_color}> seller</span>
-        </h1>
-        <h3>Register as a seller in the sign up page</h3>
+        <div className={style.become_a_seller}>
+          <div className={style.testimonials}>
+            <h4>
+              <b>This are some of our sellers testimony</b>
+            </h4>
+            <p>
+              "Joining this platform was the best decision for my business!"{" "}
+              <br />
+              (Happy Seller)
+            </p>
+            <p>
+              "The tools provided have made managing my sales so much easier"{" "}
+              <br />
+              (Satisfied Seller)
+            </p>
+            <p>
+              "My sales have increased significantly since I started using this
+              platform. <br /> (Highly recommended!")
+            </p>
+          </div>
+
+          <div className={style.seller_register}>
+            <h1>
+              <span className={style.seller_color}>
+                {" "}
+                Want to become a seller
+              </span>
+            </h1>
+            <h3>Register as a seller in the sign up page</h3>
+            <button className={style.sign_up_button}>Sign Up Now</button>
+            <ul className={style.seller_benefits}>
+              <li>Reach a larger audience</li>
+              <li>Easy management tools</li>
+              <li>Support and resources</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      {/* fifth div */}
+      <div className={style.fifth_navbar}>
+        <div className={style.footer_cover_div}>
+          {/* <div className={style.first_footer_div}>
+            <h1>Company</h1>
+            <h3>About Us</h3>
+            <h3>Our Services</h3>
+            <h3>Privacy Policy</h3>
+            <h3>Terms and Conditions</h3>
+          </div>
+          <div className={style.second_footer_div}>
+            <h1>Support</h1>
+            <h3>Contact Us</h3>
+            <h3>FAQ</h3>
+            <h3>Shipping</h3>
+            <h3>Return Policy</h3>
+          </div> */}
+          <div className={style.subscribe_div}>
+            <h1>Subscribe to our newsletter</h1>
+            <i>
+              <input
+                className={style.subscribe_input}
+                type="email"
+                placeholder="Enter your email"
+              />
+            </i>
+            <br></br>
+            <button className={style.subscribe_button}>Subscribe</button>
+          </div>
+        </div>
       </div>
 
       <div>

@@ -1,8 +1,8 @@
 import HomePage from "../auth/HomePage";
-import BuyerLogin from "../login/buyerLogin";
-import SellerSignUp from "../signUp/sellerSignUp";
-import SellerLogin from "../login/sellerLogin";
-import BuyerSignUp from "../signUp/buyerSignUp";
+import Login from "../login/Login";
+// import SellerSignUp from "../signUp/sellerSignUp";
+// import SellerLogin from "../login/sellerLogin";
+import SignUp from "../signUp/SignUp";
 import Product from "../auth/productForm"
 
 const route = [
@@ -11,21 +11,21 @@ const route = [
     element: <HomePage />,
   },
   {
-    path: "/buyerLogin",
-    element: <BuyerLogin />,
+    path: "/Login",
+    element: <Login />,
   },
   {
-    path: "/buyerSignUp",
-    element: <BuyerSignUp/>
+    path: "/SignUp",
+    element: <SignUp/>
   },
-  {
-    path: "/sellerSignUp",
-    element: <SellerSignUp />,
-  },
-  {
-    path: "/sellerLogin",
-    element: <SellerLogin/>
-  },
+  // {
+  //   path: "/sellerSignUp",
+  //   element: <SellerSignUp />,
+  // },
+  // {
+  //   path: "/sellerLogin",
+  //   element: <SellerLogin/>
+  // },
   {
     path: "/product",
     element: <Product/>

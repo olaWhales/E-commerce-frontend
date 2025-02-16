@@ -211,10 +211,80 @@
     justify-content: space-around;
 }
 .fourth_navbar{
-    border: 100px solid rgb(156, 219, 21);
     padding-top: 20px;
+    background-image: url("/src/product_picture/footer_seller_image.jpeg");
+    background-repeat: round;
+    background-size: cover;
+            background-color: rgba(127, 227, 227, 0.861);
+            background-image: linear-gradient rgba(255, 255, 255, 0.5), url("footer_seller_image.jpeg");
+}
+.sign_up_button {
+    background-color: hsla(147, 92%, 50%, 0.831);
+    color: #fff;
+    border-radius: 10px;
+    padding: 10px 20px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
 }
 
+.sign_up_button:hover {
+    background-color: #86e905;
+}
+
+.seller_benefits {
+    list-style-type: none;
+    padding: 0;
+}
+
+.seller_benefits li {
+    margin: 5px 0;
+}
+
+.testimonials p {
+    font-style: italic;
+    margin: 10px 0;
+    color: rgba(15, 7, 3, 0.758);
+    background-color: #edf0da;
+}
+.become_a_seller{
+    justify-content: space-around;
+    display: flex;
+    color: rgb(13, 59, 226);
+}
 .seller_color{
-    color: aqua;
+    color: rgb(124, 20, 215);
+}
+.fifth_navbar{
+    background-color: rgba(127, 227, 227, 0.861);
+}
+.footer_cover_div{
+    background-color: rgba(0, 0, 0, 0.114);
+    color: white;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    display: flex;
+    justify-content: space-between;
+}
+.footer_cover_div{
+    justify-content: center;
+}
+.S{
+    color: red; 
+}
+.subscribe_div{
+    justify-content: center;
+    text-align: center;
+    background-color: olivedrab;
+    justify-content:space-around;
+    border-radius: 10px;
+}
+.subscribe_input{
+    border-radius: 10px;
+    width: 200px;
+    height: 30px;
+    padding: px;
+}
+.subscribe_button{
+    border-radius: 10px;
+    height: 30px;
 }
