@@ -31,14 +31,16 @@ function Login() {
 
       if (response.status === 201 || response.status === 200) {
         const token = response.data.token;
+        console.log("Token:", token);
         localStorage.setItem("token", token);
+        console.log("API Response:", response.data);
         setUserName("");
         setPassword("");
         alert("Login successful!");
         if(response.data.role === "seller") {
-          navigate("/productForm");
+          navigate("/");
         } else
-        navigate("/");
+        navigate("/productForm");
       } else {
         alert("Invalid username or password. Please try again.");
       }
@@ -99,7 +101,11 @@ function Login() {
           </h2>
         </div>
       </div>
+    </div>
+  );
+}
 
+export default Login;
       {/* <div className={style.become}>
         <div>
           <h3>
@@ -123,8 +129,4 @@ function Login() {
           </h3>
         </div>
       </div> */}
-    </div>
-  );
-}
 
-export default Login;
