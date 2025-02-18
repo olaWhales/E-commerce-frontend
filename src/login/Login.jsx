@@ -30,9 +30,14 @@ function Login() {
       console.log("API Response:", response);
 
       if (response.status === 201 || response.status === 200) {
+        const token = response.data.token;
+        localStorage.setItem("token", token);
         setUserName("");
         setPassword("");
         alert("Login successful!");
+        if(response.data.role === "seller") {
+          navigate("/productForm");
+        } else
         navigate("/");
       } else {
         alert("Invalid username or password. Please try again.");

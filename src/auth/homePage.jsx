@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import style from "../styles/homePage.module.css";
 import { useNavigate } from "react-router-dom";
 import Customizedbutton from "../customButton/customButton";
@@ -25,6 +25,12 @@ import Screenshot from "../product_picture/Screenshot.png";
 
 const HomePage = () => {
   const [cartCount, setCartCount] = useState(0);
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
+
+  useEffect(() => {
+    const token = localStorage
+  })
+
 
   const handleAddToCart = () => {
     setCartCount((prevCount) => prevCount + 1);
