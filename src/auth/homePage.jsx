@@ -133,7 +133,9 @@ const HomePage = () => {
 
         <div className={style.login_logout_and_cartDiv}>
           <div className={style.cartlogo}>
-            <img src={cartlogo} alt="Cart.png" />
+            <button className={style.cartButton} onClick={handleNavigate}>
+              <img src={cartlogo} alt="Cart.png" />
+            </button>
             <span className={style.cartCount}>{cartCount}</span>
           </div>
           <div>
