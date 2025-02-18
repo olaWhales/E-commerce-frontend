@@ -145,7 +145,7 @@ const HomePage = () => {
             />
           </div>
           <div>
-             <Customizedbutton
+            <Customizedbutton
               style={style.Logoutbutton}
               type="submit"
               textContent="Logout"
@@ -157,10 +157,15 @@ const HomePage = () => {
         </div>
       </div>
 
+      <div className="basketball-container">
+        <div className="basketball"></div>
+      </div>
       <div className={style.advert}>
         <img src={advert} height={200} alt="" width={1000} />
       </div>
-
+      <div className="basketball-container">
+        <div className="basketball"></div>
+      </div>
       {/* Display Products Dynamically */}
       <div className={style.firstDivDisplay}>
         {products.map((product, index) => (
@@ -189,7 +194,7 @@ const HomePage = () => {
         <button className={style.view_all_button}> View All</button>
       </div>
 
-            <div className={style.fourth_navbar}>
+      <div className={style.fourth_navbar}>
         <div className={style.become_a_seller}>
           <div className={style.testimonials}>
             <h4>
@@ -228,7 +233,6 @@ const HomePage = () => {
           </div>
         </div>
       </div>
-
 
       <div className={style.fifth_navbar}>
         <div className={style.footer_cover_div}>

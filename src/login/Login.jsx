@@ -57,10 +57,10 @@ function Login() {
           <img src={handshake} alt="Welcome Handshake" />
           <div>
             <input
-              type="email"
-              name="email"
-              placeholder="INPUT YOUR EMAIL"
-              onChange={(e) => setEmail(e.target.value)}
+              type="username"
+              name="username"
+              placeholder="INPUT YOUR USERNAME"
+              onChange={(e) => setUserName(e.target.value)}
               className={style.input}
               required
             />

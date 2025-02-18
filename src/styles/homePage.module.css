@@ -308,24 +308,32 @@ button:hover {
     border-radius: 25px;
     cursor: pointer;
 }
+
+/*  cart styling  */
+.cartlogo {
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
 .cartlogo img {
-    width: 150px;
-    height: 33px;
+    width: 40px;
+    /* Make the image smaller */
+    height: 30px;
 }
 
 .cartCount {
-    padding-top: 18px;
-    position: relative;
-    top: 0;
-    right: 0;
-    background-color: rgba(31, 30, 34, 0.731);
+    background-color: red;
     color: white;
-    font-size: 12px;
-    padding: 6px;
     border-radius: 50%;
-    transform: translate(50%, -50%);
-    font-weight: bold;
+    padding: 2px 6px;
+    font-size: 12px;
+    position: absolute;
+    top: -5px;
+    right: -5px;
 }
+
+/*  loggin and logout div styling */
 
 .login_logout_and_cartDiv {
     display: flex;
@@ -522,3 +530,26 @@ button:hover {
     height: 500px;
     /* Adjust the height as needed */
 }
+.advert img {
+    border-radius: 10%;
+    /* width: 100px; */
+    /* Set the desired width */
+    height: 100px;
+    /* Set the same height as width for a circular shape */
+    object-fit: cover;
+    /* Ensures the image covers the area without distortion */
+}
+.advert {
+    text-align: center;
+    padding: 10px;
+    /* justify-content: center; */
+}
+.basketball-container {
+    position: relative;
+    height: 100vh;
+    /* Full height of the viewport */
+    overflow: hidden;
+    /* Ensure the ball doesn't overflow outside */
+}
+
+
