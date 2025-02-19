@@ -27,7 +27,7 @@ const route = [
   //   element: <SellerLogin/>
   // },
   {
-    path: "/productForm",
+    path: "/product_dashboard",
     element: <Product/>
   }
 ];

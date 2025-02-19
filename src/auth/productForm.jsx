@@ -1,182 +1,148 @@
 import React, { useState } from "react";
 import style from "../styles/product.module.css";
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import Customizedbutton from "../customButton/customButton";
-import axios from "axios"; // Fixed import
-
-
+import axios from "axios";
 
 const Product = () => {
-    const [sellerId, setSellerId] = useState("");
-    const [productName, setProductName] = useState("");
-    const [productDescription, setProductDescription] = useState("");
-    const [productPrice, setProductPrice] = useState("");
-    const [productQuantity, setProductQuantity] = useState("");
-    
-    const navigate = useNavigate();
-    const handleNavigate = async (event) => {
+  const [showForm, setShowForm] = useState(false);
+  const [sellerId, setSellerId] = useState("");
+  const [productName, setProductName] = useState("");
+  const [productDescription, setProductDescription] = useState("");
+  const [productPrice, setProductPrice] = useState("");
+  const [productQuantity, setProductQuantity] = useState("");
+
+  const navigate = useNavigate();
+
+  const toggleForm = () => {
+    setShowForm(!showForm);
+  };
+
+  const handleNavigate = async (event) => {
     event.preventDefault();
+    try {
+      const payload = {
+        sellerId,
+        productName,
+        productDescription,
+        productPrice,
+        productQuantity,
+      };
 
-  try {
-    const payload = {
-      sellerId,
-      productName,
-      productDescription,
-      productPrice,
-      productQuantity,
-    };
+      const token = localStorage.getItem("token");
+      const response = await axios.post(
+        "http://localhost:8000/api/product/create/",
+        payload,
+        {
+          headers: {
+            "Content-Type": "application/json",
+            Authorization: `Bearer ${token}`,
+          },
+        }
+      );
 
-    const token = localStorage.getItem("token");
-    const response = await axios.post(
-      "http://localhost:8000/api/product/create/",
-      payload,
-      {
-        headers: {
-          "Content-Type": "application/json",
-          Authorization: `Bearer ${token}`,
-        },
+      console.log("API Response:", response);
+
+      if (response.status === 201 || response.status === 200) {
+        setSellerId("");
+        setProductName("");
+        setProductDescription("");
+        setProductPrice("");
+        setProductQuantity("");
+        alert("Product uploaded successfully!");
+        navigate("/");
+      } else {
+        alert("All fields must be set correctly. Please try again.");
       }
-    );
-
-    console.log("API Response:", response);
-
-    if (response.status === 201 || response.status === 200) {
-      setSellerId("");
-      setProductName("");
-      setProductDescription("");
-      setProductPrice("");
-      setProductQuantity("");
-      alert("Product uploaded successfully!");
-      navigate("/");
-    } else {
-      alert("All field must be set correctly. Please try again.");
+    } catch (error) {
+      console.error(
+        "Error uploading product:",
+        error.response?.data || error.message
+      );
+      alert("Uploading failed due to a server error. Please try again later.");
     }
-  } catch (error) {
-    console.error(
-      "error uploading product:",
-      error.response?.data || error.message
-    );
-    alert("Uploading failed due to a server error. Please try again later.");
-  }
-};
-
-
-
-
-  // // Define the form fields manually
-  // const [form, setForm] = useState({
-  //   sellerId: "",
-  //   productName: "",
-  //   productDescription: "",
-  //   productPrice: "",
-  //   productQuantity: "",
-  // });
-
-  // // Handle input changes
-  // const handleChange = (e) => {
-  //   const { name, value } = e.target;
-  //   setForm({
-  //     ...form,
-  //     [name]: value,
-  //   });
-  // };
-
-  // // Handle form submission
-  // const handleSubmit = async (e) => {
-  //   e.preventDefault();
-  //   console.log("Form data:", form);
-  //   try {
-  //     const response = await fetch(
-  //       "http://localhost:8000/api/product/create/",
-  //       {
-  //         method: "POST",
-  //         headers: {
-  //           "Content-Type": "application/json",
-  //         },
-  //         body: JSON.stringify(form),
-  //       }
-  //     );
-  //     if (response.ok) {
-  //       console.log("Product created successfully!");
-  //     } else {
-  //       console.error("Error creating product.");
-  //     }
-  //   } catch (error) {
-  //     console.error("Error:", error);
-  //   }
-  // };
+  };
 
   return (
-    // <form onSubmit={handleSubmit} className={style.form}>
-    <form className={style.form}>
-      <div className={style.formGroup}>
-        <label htmlFor="name">Input your Identity:</label>
-        <input
-          type="number"
-          id="sellerId"
-          name="sellerId"
-          // value={form.sellerId}
-          // onChange={handleChange}
-          onChange={(e) => setSellerId(e.target.value)}
-          placeholder="Enter your seller ID"
-        />
-      </div>
-      <div className={style.formGroup}>
-        <label htmlFor="name">productName:</label>
-        <input
-          type="text"
-          id="productName"
-          name="productName"
-          // value={form.productName}
-          // onChange={handleChange}
-          onChange={(e) => setProductName(e.target.value)}
-          placeholder="Enter product Name"
-        />
-      </div>
-      <div className={style.formGroup}>
-        <label htmlFor="stock">Description:</label>
-        <input
-          type="text"
-          id="productDescription"
-          name="productDescription"
-          // value={form.productDescription}
-          // onChange={handleChange}
-          onChange={(e) => setProductDescription(e.target.value)}
-          placeholder="Enter product description"
-        />
-      </div>
-      <div className={style.formGroup}>
-        <label htmlFor="price">Price:</label>
-        <input
-          type="number"
-          id="productPrice"
-          name="productPrice"
-          // value={form.productPrice}
-          // onChange={handleChange}
-          onChange={(e) => setProductPrice(e.target.value)}
-          placeholder="Enter product price"
-        />
-      </div>
-      <div className={style.formGroup}>
-        <label htmlFor="quantity">Quantity:</label>
-        <input
-          type="number"
-          id="productQuantity"
-          name="productQuantity"
-          // value={form.productQuantity}
-          // onChange={handleChange}
-          onChange={(e) => setProductQuantity(e.target.value)}
-          placeholder="Enter product quantity"
-        />
-      </div>
+    <div>
       <Customizedbutton
-        className={style.button}
+        className={style.uploadButton}
         type="button"
-        textContent="Submit"
-        onClick={handleNavigate}
-      />{" "}
-    </form>
+        textContent="Upload Product"
+        onClick={toggleForm}
+      />
+
+{/* i use show form here to allow the form to be appearing as wanted */}
+      <div className={`${style.formContainer} ${showForm ? style.show : ""}`}>
+        <form className={style.form}>
+          <div className={style.formGroup}>
+            <label htmlFor="name">Input your Identity:</label>
+            <input
+              type="number"
+              id="sellerId"
+              name="sellerId"
+              onChange={(e) => setSellerId(e.target.value)}
+              placeholder="Enter your seller ID"
+            />
+          </div>
+          <div className={style.formGroup}>
+            <label htmlFor="name">Product Name:</label>
+            <input
+              type="text"
+              id="productName"
+              name="productName"
+              onChange={(e) => setProductName(e.target.value)}
+              placeholder="Enter product Name"
+            />
+          </div>
+          <div className={style.formGroup}>
+            <label htmlFor="stock">Description:</label>
+            <input
+              type="text"
+              id="productDescription"
+              name="productDescription"
+              onChange={(e) => setProductDescription(e.target.value)}
+              placeholder="Enter product description"
+            />
+          </div>
+          <div className={style.formGroup}>
+            <label htmlFor="price">Price:</label>
+            <input
+              type="number"
+              id="productPrice"
+              name="productPrice"
+              onChange={(e) => setProductPrice(e.target.value)}
+              placeholder="Enter product price"
+            />
+          </div>
+          <div className={style.formGroup}>
+            <label htmlFor="quantity">Quantity:</label>
+            <input
+              type="number"
+              id="productQuantity"
+              name="productQuantity"
+              onChange={(e) => setProductQuantity(e.target.value)}
+              placeholder="Enter product quantity"
+            />
+          </div>
+          <Customizedbutton
+            className={style.button}
+            type="button"
+            textContent="Submit"
+            onClick={handleNavigate}
+          />
+
+          <Customizedbutton
+            className={style.closeButton}
+            type="button"
+            textContent="Close"
+            onClick={toggleForm}
+          />
+        </form>
+      </div>
+    </div>
   );
 };
 
 export default Product;
+

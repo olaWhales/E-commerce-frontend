@@ -26,7 +26,6 @@ function Login() {
           },
         }
       );
-
       console.log("API Response:", response);
 
       if (response.status === 201 || response.status === 200) {
@@ -37,10 +36,13 @@ function Login() {
         setUserName("");
         setPassword("");
         alert("Login successful!");
-        if(response.data.role === "seller") {
-          navigate("/");
+
+        // if(response.data.role === "SELLER") {
+          if (response.data.userRole === "SELLER"){
+            console.log("API Response Data:", response.data);
+          navigate("/product_dashboard");
         } else
-        navigate("/productForm");
+        navigate("/");
       } else {
         alert("Invalid username or password. Please try again.");
       }
