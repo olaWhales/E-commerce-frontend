@@ -6,7 +6,16 @@
     cursor: pointer;
     margin: 10px;
 } */
-
+.productContainer {
+    display: flex;
+    flex-direction: column;
+    /* Makes items stack vertically */
+    align-items:flex-start;
+    /* Centers the buttons */
+    gap: 10px;
+    /* Adds spacing between buttons */
+    margin-top: 20px;
+}
 .formContainer {
     position: fixed;
     top: 0;
@@ -20,6 +29,23 @@
     z-index: 100;
     padding: 20px;
 }
+.deleteContainer {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 50%;
+    height: 200%;
+    background-color: rgb(200, 236, 216);
+    box-shadow: -2px 0 5px rgba(0, 0, 0, 0.3);
+    overflow-y: auto;
+    transition: right 1.5s ease-in-out;
+    z-index: 100;
+    padding: 20px;
+}
+.deleteContainer.show{
+    right: 0;
+}
+
 
 .formContainer.show {
     right: 0;

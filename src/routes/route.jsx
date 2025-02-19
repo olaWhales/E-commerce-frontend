@@ -3,7 +3,7 @@ import Login from "../login/Login";
 // import SellerSignUp from "../signUp/sellerSignUp";
 // import SellerLogin from "../login/sellerLogin";
 import SignUp from "../signUp/SignUp";
-import Product from "../auth/productForm"
+import Product from "../auth/product_dashboard"
 
 const route = [
   {
@@ -27,7 +27,7 @@ const route = [
   //   element: <SellerLogin/>
   // },
   {
-    path: "/productForm",
+    path: "/product_dashboard",
     element: <Product/>
   }
 ];
